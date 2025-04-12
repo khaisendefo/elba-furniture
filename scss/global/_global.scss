@@ -1,0 +1,64 @@
+
+@import 'text';
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  // background-color: var(--science-blue-600);
+}
+
+::-webkit-scrollbar-track {
+  // background-color: var(--science-blue-50);
+}
+
+
+html, body {
+  scroll-behavior: smooth;
+}
+
+.body {
+  font-family: 'Gilroy';
+  font-size: 16px;
+}
+
+.wrapper {
+  min-height: 100%;
+  width: 100%;
+}
+
+// $breakpoints: (
+//   1400px: 1270px,
+//   1300px: 1170px,
+//   1200px: 1070px,
+//   1100px: 970px,
+//   1000px: 870px,
+//   900px: 770px,
+//   800px: 670px,
+//   700px: 570px,
+//   600px: 470px,
+//   500px: 400px
+// );
+
+.container {
+  max-width: 1909px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+
+// .container {
+//   margin: 0 auto;
+//   padding: 0 15px;
+//   max-width: 1270px;
+//   height: 100%;
+
+//   @each $breakpoint, $max-width in $breakpoints {
+//     @media (max-width: #{$breakpoint}) {
+//       max-width: $max-width;
+//     }
+//   }
+// }
+

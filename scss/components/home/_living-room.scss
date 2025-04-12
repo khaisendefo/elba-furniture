@@ -1,0 +1,163 @@
+.living-room {
+  height: 1086.3837890625px;
+  padding: 5px;
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 530px 1369px;
+    height: 100%;
+    gap: 5px;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__card {
+    position: relative;
+    // background-color: rgb(8, 49, 49);
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    perspective: 1500px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    &-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s linear;
+    }
+
+    &-front, &-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    &-front {
+      transform: rotateX(0deg);
+
+      &-one {
+        background: url("../image/living-room/card-one-front.jpg") no-repeat center center / cover;
+      }
+
+      &-two {
+        background-color: var(--muted-olive-color);
+
+        &-inner {
+          @include flex-all-center;
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          & img {
+            content: '';
+            position: absolute;
+            right: -30px;
+            bottom: -30px;
+            width: 200px;
+            height: 200px;
+          }
+        }
+
+        & h2 {
+          max-width: 314px;
+          font-weight: 400;
+          font-size: 48px;
+          line-height: 1.2;
+
+          & span {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    &-back {
+      transform: rotateX(180deg);
+
+      &-one {
+        background: url("../image/living-room/card-one-back.jpg") no-repeat center center / cover;
+      }
+
+      &-two {
+        background: url("../image/living-room/card-two-back.jpg") no-repeat center center / cover;
+
+        & h2 {
+          max-width: 314px;
+          font-weight: 400;
+          font-size: 48px;
+          line-height: 1.2;
+
+          & span {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  &__right {
+    height: 100%;
+  }
+
+  &__slider {
+    width: 100%;
+    height: 100%;
+
+    &-track {
+      height: 100%;
+    }
+
+    &-list {
+      height: 100%;
+    }
+
+    &-slide {
+      height: 100%;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & .splide__pagination {
+      bottom: 38px;
+      display: flex;
+      justify-content: center;
+      gap: 33px;
+    
+      .splide__pagination__page {
+        width: 31px;
+        height: 31px;
+        background-color: #D3D3D3;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 1;
+        transition: background-color 0.3s;
+    
+        &.is-active {
+          width: 31px;
+          height: 31px;
+          background-color: #4B5D52;
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+
