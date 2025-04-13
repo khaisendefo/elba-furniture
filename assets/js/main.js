@@ -69,6 +69,32 @@ const livingRoomCards = () => {
 };
 livingRoomCards(); 
 
+const burger = document.querySelector('.burger');
+  const menu = document.querySelector('.menu');
+  const body = document.body;
+
+  function toggleMenu() {
+    burger.classList.toggle('active');
+    menu.classList.toggle('active');
+    body.classList.toggle('no-scroll');
+  }
+
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation(); // Не даем клик уйти наверх
+    toggleMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    const clickedLink = e.target.closest('.menu__nav-link');
+    const isMenuOpen = menu.classList.contains('active');
+
+    if (!clickedLink && isMenuOpen) {
+      burger.classList.remove('active');
+      menu.classList.remove('active');
+      body.classList.remove('no-scroll');
+    }
+  });
+
 const livingRoom = () => {
   const sliderElement = document.querySelector('.living-room__slider');
   if (!sliderElement) return; 
@@ -81,15 +107,6 @@ const livingRoom = () => {
     pauseOnHover: true,
     pagination: true,
     arrows: false,
-    breakpoints: {
-      1000: {
-        perPage: 2,
-        gap: '10px',
-      },
-      700: {
-        perPage: 1,
-      }
-    }
   });
 
   splide.mount();

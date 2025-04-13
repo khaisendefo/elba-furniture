@@ -1,0 +1,66 @@
+.menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 200;
+  padding: 56px 0 0 40px;
+  width: 541px;
+  min-height: 100%;
+  background-color: #1F3730;
+  transform: translateX(-100%);
+  transition: transform var(--transition);
+
+  @include breakpoint-600 {
+    width: 100%;
+  }
+
+  &.active {
+    transform: translateX(0);
+  }
+
+  &__nav {
+    &-list {
+      @include flex-column;
+      gap: 65px;
+
+      @include breakpoint-700 {
+        gap: 50px;
+      }
+
+      @media (max-width: 450px) {
+        gap: 35px;
+      }
+    }
+
+    &-link {
+      @include flex-align-center;
+      gap: 55px;
+      color: rgb(255, 255, 255);
+      font-size: 35px;
+      font-weight: 400;
+      line-height: 41px;
+      transition: var(--transition);
+
+      @include breakpoint-700 {
+        font-size: 30px;
+      }
+
+      @media (max-width: 450px) {
+        font-size: 25px;
+      }
+
+      & svg {
+        transition: var(--transition);
+
+        @include breakpoint-700 {
+          width: 13px;
+          height: 18px;
+        }
+      }
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
