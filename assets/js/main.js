@@ -10,7 +10,7 @@ const cardAnimations = () => {
       const inner = card.querySelector('.card-inner');
 
       const setTransformOrigin = () => {
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 852) {
           card.style.transformOrigin = index === 0 ? 'left top' : 'right top';
         } else {
           card.style.transformOrigin = index === 0 ? 'left top' : 'left bottom';
@@ -20,7 +20,7 @@ const cardAnimations = () => {
       const calculateScale = () => {
         const containerRect = container.getBoundingClientRect();
         const cardRect = card.getBoundingClientRect();
-        return window.innerWidth <= 768
+        return window.innerWidth <= 852
           ? containerRect.width / cardRect.width
           : containerRect.height / cardRect.height;
       };
