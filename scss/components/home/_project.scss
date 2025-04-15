@@ -1,0 +1,529 @@
+.project {
+  height: 1086.3837890625px;
+  padding: 0 5px 5px;
+
+  @media (max-width: 1600px) {
+    height: 100vh;
+  }
+
+  @media (max-width: 1450px) {
+    height: 900px;
+  }
+
+  @media (max-width: 1350px) {
+    height: 800px;
+  }
+
+  @include breakpoint-1200 {
+    height: 700px;
+  }
+
+  @include breakpoint-1000 {
+    height: 600px;
+  }
+
+  @media (max-width: 852px) {
+    height: auto;
+    padding: 0;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 5px;
+    height: 100%;
+
+    @media (max-width: 852px) {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    @media (max-width: 852px) {
+      display: grid;
+      gap: 3px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 422px;
+    }
+
+    @include breakpoint-700 {
+      grid-template-rows: 350px;
+    }
+
+    @include breakpoint-500 {
+      grid-template-rows: 250px;
+    }
+
+    @media (max-width: 430px) {
+      grid-template-rows: 200px;
+    }
+  }
+
+  &__card {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+    perspective: 1500px;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    & h2 {
+      max-width: 314px;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 1.2;
+
+      @media (max-width: 1350px) {
+        font-size: 40px;
+      }
+
+      @include breakpoint-1000 {
+        display: flex;
+        flex-direction: column;
+        font-size: 32px;
+      }
+
+      @media (max-width: 852px) {
+        font-size: 41px;
+      }
+
+      @include breakpoint-700 {
+        font-size: 33px;
+      }
+
+      @include breakpoint-500 {
+        font-size: 25px;
+      }
+
+      @media (max-width: 430px) {
+        font-size: 21px;
+      }
+
+      & span {
+        font-weight: 700;
+      }
+    }
+
+    & .img-paws {
+      content: '';
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      width: 200px;
+      height: 200px;
+
+      @include breakpoint-1200 {
+        width: 130px;
+        height: 130px;
+      }
+
+      @include breakpoint-500 {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
+    &-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s linear;
+    }
+
+    &-front, &-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      color: white;
+      font-weight: bold;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    &-front {
+      transform: rotateX(0deg);
+
+      &-number {
+        position: absolute;
+        top: 26px;
+        left: 17px;
+        color: #2C3934;
+        font-weight: 300;
+        font-size: 152px;
+
+        @media (max-width: 1350px) {
+          top: 10px;
+          left: 10px;
+          font-size: 135px;
+        }
+
+        @include breakpoint-1200 {
+          top: 0;
+          left: 0;
+          font-size: 125px;
+        }
+
+        @include breakpoint-1000 {
+          font-size: 103px;
+        }
+
+        @media (max-width: 852px) {
+          top: 14px;
+          left: 27px;
+        }
+
+        @include breakpoint-500 {
+          font-size: 60px;
+          top: 0;
+          left: 0;
+        }
+      }
+
+      &-one {
+        background-color: var(--muted-olive-color);
+      }
+
+      &-two {
+        background: url("../image/project/card-two-front.jpg") no-repeat center center / cover;
+
+        &-inner {
+          @include flex-all-center;
+          position: relative;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    &-back {
+      transform: rotateX(180deg);
+
+      @media (max-width: 1500px) {
+        padding: 20px !important;
+      }
+
+      @media (max-width: 852px) {
+        padding: 30px !important;
+      }
+
+      @include breakpoint-700 {
+        padding: 20px !important;
+      }
+
+      @include breakpoint-500 {
+        padding: 10px !important;
+      }
+
+      &-description {
+        font-size: 28px;
+        font-weight: 400;
+        line-height: 32px;
+        max-width: 389px;
+
+        @media (max-width: 1500px) {
+          max-width: 100%;
+        }
+
+        @include breakpoint-1400 {
+          font-size: 24px;
+        }
+
+        @include breakpoint-1200 {
+          font-size: 20px;
+        }
+
+        @include breakpoint-1100 {
+          font-size: 16px;
+          line-height: 25px;
+        }
+
+        @media (max-width: 852px) {
+          font-size: 22px;
+          max-width: 309px;
+        }
+
+        @include breakpoint-700 {
+          font-size: 18px;
+        }
+
+        @include breakpoint-500 {
+          font-size: 14px;
+        }
+
+        &:first-child {
+          margin-bottom: 30px;
+
+          @include breakpoint-1200 {
+            margin-bottom: 10px;
+          }
+
+          @media (max-width: 852px) {
+            margin-bottom: 20px;
+          }
+
+          @include breakpoint-600 {
+            margin-bottom: 10px;
+          }
+        }
+
+        &:last-child {
+          margin-bottom: 30px;
+
+          @include breakpoint-1200 {
+            margin-bottom: 10px;
+          }
+
+          @media (max-width: 852px) {
+            margin-bottom: 20px;
+          }
+
+          @include breakpoint-600 {
+            margin-bottom: 10px;
+          }
+        }
+
+        & span {
+          display: inline-block;
+          width: 6px;
+          height: 6px;
+          background-color: #2C3934;
+          border-radius: 50%;
+          transform: translateY(-5px);
+
+          @include breakpoint-1100 {
+            transform: translateY(-2px)
+          }
+        }
+      }
+
+      &-row {
+        @include flex-between;
+        gap: 30px;
+
+        @include breakpoint-1300 {
+          gap: 20px;
+        }
+
+        @include breakpoint-600 {
+          gap: 10px;
+        }
+
+        &-item {
+          max-width: 139px;
+          text-align: center;
+          font-family: "Roboto Condensed", sans-serif;
+
+          & img {
+            width: 78px;
+            height: 78px;
+
+            @include breakpoint-1300 {
+              width: 50px;
+              height: 50px;
+            }
+
+            @include breakpoint-1100 {
+              width: 40px;
+              height: 40px;
+            }
+
+            @media (max-width: 852px) {
+              width: 55px;
+              height: 55px;
+            }
+
+            @include breakpoint-600 {
+              width: 40px;
+              height: 40px;
+            }
+          }
+
+          & p {
+            font-size: 17px;
+            font-weight: 400;
+            line-height: 20px;
+
+            @include breakpoint-1300 {
+              font-size: 14px;
+            }
+
+            @include breakpoint-1100 {
+              font-size: 12px;
+              font-weight: 300;
+            }
+
+            @media (max-width: 852px) {
+              font-size: 11px;
+              font-weight: 400;
+            }
+
+            @include breakpoint-500 {
+              font-size: 8px;
+              line-height: 12px;
+            }
+          }
+        }
+      }
+
+
+      &-one {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        padding: 48px;
+        background-color: var(--muted-olive-color);
+      }
+
+      &-two {
+        background-color: var(--muted-olive-color);
+      }
+    }
+  }
+
+  &__right {
+    height: 100%;
+  }
+
+  &__slider {
+    width: 100%;
+    height: 100%;
+
+    &-track {
+      height: 100%;
+    }
+
+    &-list {
+      position: relative;
+      height: 100%;
+    }
+
+    &-slide {
+      height: 100%;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        
+        @include breakpoint-1300 {
+          object-fit: cover;
+          object-position: center;
+        }
+      }
+
+      & h2 {
+        position: absolute;
+        top: 50%;
+        left: 135px;
+        color: #fff;
+        z-index: 3;
+        max-width: 440px;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 1.2;
+        text-shadow: 0 0 5px #000;
+        transform: translateY(-50%);
+
+        @media (max-width: 1350px) {
+          font-size: 40px;
+        }
+
+        @include breakpoint-1200 {
+          left: 80px;
+        }
+
+        @include breakpoint-1000 {
+          left: 60px;
+          display: flex;
+          flex-direction: column;
+          font-size: 32px;
+        }
+
+        @media (max-width: 852px) {
+          font-size: 41px;
+        }
+
+        @include breakpoint-700 {
+          left: 40px;
+          font-size: 33px;
+        }
+        
+        @include breakpoint-500 {
+          font-size: 25px;
+        }
+
+        @media (max-width: 430px) {
+          font-size: 21px;
+        }
+
+        & span {
+          font-weight: 700;
+        }
+      }
+    }
+
+    & .splide__pagination {
+      bottom: 38px;
+      display: flex;
+      justify-content: center;
+      gap: 33px;
+
+      @media (max-width: 852px) {
+        display: none;
+      }
+
+      @include breakpoint-1000 {
+        gap: 20px;
+      }
+    
+      .splide__pagination__page {
+        width: 31px;
+        height: 31px;
+        background-color: #D3D3D3;
+        border-radius: 50%;
+        cursor: pointer;
+        opacity: 1;
+        transition: background-color 0.3s;
+
+        @media (max-width: 1350px) {
+          width: 25px;
+          height: 25px;
+        }
+
+        @media (max-width: 1000px) {
+          width: 20px;
+          height: 20px;
+        }
+        
+        &.is-active {
+          width: 31px;
+          height: 31px;
+          background-color: #4B5D52;
+          transform: scale(1);
+
+          @media (max-width: 1350px) {
+            width: 25px;
+            height: 25px;
+          }
+
+          @media (max-width: 1000px) {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+

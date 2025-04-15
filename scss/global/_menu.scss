@@ -1,14 +1,15 @@
 .menu {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 200;
   padding: 56px 0 0 40px;
   width: 541px;
-  min-height: 100%;
+  height: 100vh;
   background-color: #1F3730;
-  transform: translateX(-100%);
+  transform: translateX(-110%);
   transition: transform var(--transition);
+  overflow-y: auto;
 
   @include breakpoint-600 {
     width: 100%;
@@ -16,6 +17,25 @@
 
   &.active {
     transform: translateX(0);
+  }
+
+  &__inner {
+    height: 100%;
+  }
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 150;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #0c0c0cbb;
+    display: none;
+
+    &.active {
+      display: block;
+    }
   }
 
   &__nav {

@@ -1,6 +1,6 @@
-.living-room {
+.design {
   height: 1086.3837890625px;
-  padding: 5px;
+  padding: 0 5px 5px;
 
   @media (max-width: 1600px) {
     height: 100vh;
@@ -73,6 +73,62 @@
     perspective: 1500px;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
+    & h2 {
+      max-width: 314px;
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 1.2;
+
+      @media (max-width: 1350px) {
+        font-size: 40px;
+      }
+
+      @include breakpoint-1000 {
+        display: flex;
+        flex-direction: column;
+        font-size: 32px;
+      }
+
+      @media (max-width: 852px) {
+        font-size: 41px;
+      }
+
+      @include breakpoint-700 {
+        font-size: 33px;
+      }
+
+      @include breakpoint-500 {
+        font-size: 25px;
+      }
+
+      @media (max-width: 430px) {
+        font-size: 21px;
+      }
+
+      & span {
+        font-weight: 700;
+      }
+    }
+
+    & .img-paws {
+      content: '';
+      position: absolute;
+      right: -10px;
+      bottom: -10px;
+      width: 200px;
+      height: 200px;
+
+      @include breakpoint-1200 {
+        width: 130px;
+        height: 130px;
+      }
+
+      @include breakpoint-500 {
+        width: 90px;
+        height: 90px;
+      }
+    }
+
     &-inner {
       position: relative;
       width: 100%;
@@ -98,8 +154,44 @@
     &-front {
       transform: rotateX(0deg);
 
+      &-number {
+        position: absolute;
+        top: 26px;
+        left: 17px;
+        color: #2C3934;
+        font-weight: 300;
+        font-size: 152px;
+
+        @media (max-width: 1350px) {
+          top: 10px;
+          left: 10px;
+          font-size: 135px;
+        }
+
+        @include breakpoint-1200 {
+          top: 0;
+          left: 0;
+          font-size: 125px;
+        }
+
+        @include breakpoint-1000 {
+          font-size: 103px;
+        }
+
+        @media (max-width: 852px) {
+          top: 14px;
+          left: 27px;
+        }
+
+        @include breakpoint-500 {
+          font-size: 60px;
+          top: 0;
+          left: 0;
+        }
+      }
+
       &-one {
-        background: url("../image/living-room/card-one-front.jpg") no-repeat center center / cover;
+        background-color: var(--muted-olive-color);
       }
 
       &-two {
@@ -110,112 +202,6 @@
           position: relative;
           width: 100%;
           height: 100%;
-
-          & img {
-            content: '';
-            position: absolute;
-            right: -30px;
-            bottom: -30px;
-            width: 200px;
-            height: 200px;
-
-            @include breakpoint-1200 {
-              width: 130px;
-              height: 130px;
-            }
-
-            @include breakpoint-500 {
-              width: 90px;
-              height: 90px;
-              bottom: -20px;
-            }
-          }
-        }
-
-        & h2 {
-          max-width: 314px;
-          font-weight: 400;
-          font-size: 48px;
-          line-height: 1.2;
-
-          @media (max-width: 1350px) {
-            font-size: 40px;
-          }
-
-          @include breakpoint-1000 {
-            display: flex;
-            flex-direction: column;
-            font-size: 32px;
-          }
-
-          @media (max-width: 852px) {
-            font-size: 41px;
-          }
-
-          @include breakpoint-700 {
-            font-size: 33px;
-          }
-
-          @include breakpoint-500 {
-            font-size: 25px;
-          }
-
-          @media (max-width: 430px) {
-            font-size: 21px;
-          }
-
-          & span {
-            font-weight: 700;
-          }
-        }
-      }
-    }
-
-    &-back {
-      transform: rotateX(180deg);
-
-      &-one {
-        background: url("../image/living-room/card-one-back.jpg") no-repeat center center / cover;
-      }
-
-      &-two {
-        background: url("../image/living-room/card-two-back.jpg") no-repeat center center / cover;
-
-        & h2 {
-          max-width: 314px;
-          font-weight: 400;
-          font-size: 48px;
-          line-height: 1.2;
-
-          @media (max-width: 1350px) {
-            font-size: 40px;
-          }
-
-          @include breakpoint-1000 {
-            display: flex;
-            flex-direction: column;
-            font-size: 32px;
-          }
-
-          @media (max-width: 852px) {
-            font-size: 41px;
-          }
-
-          @include breakpoint-700 {
-            font-size: 33px;
-          }
-          
-          @include breakpoint-500 {
-            font-size: 25px;
-          }
-
-          @media (max-width: 430px) {
-            font-size: 21px;
-          }
-
-          & span {
-            font-weight: 700;
-          }
         }
       }
     }
@@ -257,7 +243,7 @@
         left: 135px;
         color: #fff;
         z-index: 3;
-        max-width: 314px;
+        max-width: 440px;
         font-weight: 400;
         font-size: 48px;
         line-height: 1.2;
