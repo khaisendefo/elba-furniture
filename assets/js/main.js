@@ -118,8 +118,10 @@ const initSliders = () => {
       pauseOnHover: true,
       pagination: true,
       arrows: false,
+      type: 'loop',
     }).mount();
   });
 };
+
 initSliders();
 
