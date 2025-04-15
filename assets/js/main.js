@@ -141,44 +141,44 @@ projectCards();
 
 const burgerMenu = () => {
   const burger = document.querySelector('.burger');
-const menu = document.querySelector('.menu');
-const overlay = document.querySelector('.menu__overlay');
-const body = document.body;
+  const menu = document.querySelector('.menu');
+  const overlay = document.querySelector('.menu__overlay');
+  const body = document.body;
 
-function openMenu() {
-  burger.classList.add('active');
-  menu.classList.add('active');
-  overlay.classList.add('active');
-  body.classList.add('no-scroll');
-}
-
-function closeMenu() {
-  burger.classList.remove('active');
-  menu.classList.remove('active');
-  overlay.classList.remove('active');
-  body.classList.remove('no-scroll');
-}
-
-burger.addEventListener('click', (e) => {
-  e.stopPropagation();
-  menu.classList.contains('active') ? closeMenu() : openMenu();
-});
-
-overlay.addEventListener('click', () => {
-  closeMenu();
-});
-
-document.addEventListener('click', (e) => {
-  const isInsideMenu = e.target.closest('.menu');
-  const isNavLink = e.target.closest('.menu__nav-link');
-
-  if (!isInsideMenu && !isNavLink && menu.classList.contains('active')) {
-    closeMenu();
+  function openMenu() {
+    burger.classList.add('active');
+    menu.classList.add('active');
+    overlay.classList.add('active');
+    body.classList.add('no-scroll');
   }
-});
 
-}
+  function closeMenu() {
+    burger.classList.remove('active');
+    menu.classList.remove('active');
+    overlay.classList.remove('active');
+    body.classList.remove('no-scroll');
+  }
+
+  burger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    menu.classList.contains('active') ? closeMenu() : openMenu();
+  });
+
+  overlay.addEventListener('click', () => {
+    closeMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    const isNavLink = e.target.closest('.menu__nav-link');
+
+    if (!isNavLink && menu.classList.contains('active')) {
+      closeMenu();
+    }
+  });
+};
+
 burgerMenu();
+
 
 const livingRoom = () => {
   const sliderElement = document.querySelector('.living-room__slider');
