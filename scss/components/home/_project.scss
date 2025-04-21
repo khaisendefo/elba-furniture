@@ -1,5 +1,5 @@
 .project {
-  height: 1086.3837890625px;
+  height: 1076px;
   padding: 0 5px 5px;
 
   @media (max-width: 1600px) {
@@ -28,8 +28,8 @@
   }
 
   &__inner {
-    display: grid;
-    grid-template-columns: 1fr 2fr; 
+    display: flex;
+    justify-content: space-between;
     gap: 5px;
     height: 100%;
 
@@ -44,6 +44,22 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+
+    @media (max-width: 1450px) {
+      min-width: 442px;
+    }
+
+    @media (max-width: 1350px) {
+      min-width: 392px;
+    }
+
+    @include breakpoint-1200 {
+      min-width: 342px;
+    }
+
+    @include breakpoint-1000 {
+      min-width: 292px;
+    }
 
     @media (max-width: 852px) {
       display: grid;
@@ -411,6 +427,7 @@
   }
 
   &__right {
+    max-width: 1364.5843505859375px;
     height: 100%;
   }
 
